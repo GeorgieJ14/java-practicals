@@ -1,7 +1,6 @@
-package com.java.aoop_practicals;
+package java_aoop_practicals;
 
 import static org.junit.Assert.assertTrue;
-
 import org.junit.Test;
 
 /**
