@@ -3,23 +3,23 @@ package java_aoop_practicals;
 import java.util.Observable;
 
 public class TLModel extends Observable  {
-   
+
     private boolean red;
     private boolean amber;
     private boolean green;
-   
+
     public boolean getRed() {
         return red;
     }
-    
+
      public boolean getAmber() {
         return amber;
     }
-     
+
     public boolean getGreen() {
         return green;
     }
-    
+
     public void change(){
         if (red && !amber && !green) {
             amber = true;
@@ -41,7 +41,7 @@ public class TLModel extends Observable  {
         setChanged();
         notifyObservers();
     }
-    
+
     public void initialise()
     {
         red = true;
@@ -50,7 +50,7 @@ public class TLModel extends Observable  {
         setChanged();
         notifyObservers();
     }
-    
+
     public TLModel(){
         initialise();   
     }

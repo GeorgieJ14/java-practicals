@@ -16,16 +16,16 @@ public class TLModelWithSpecification extends Observable {
     public TLModelWithSpecification() {
         initialise();
     }
-    
-    public boolean getRed(){
+
+    public boolean getRed() {
         return red;
     }
-    
-    public boolean getAmber(){
+
+    public boolean getAmber() {
         return amber;
     }
 
-    public boolean getGreen(){
+    public boolean getGreen() {
         return green;
     }
 

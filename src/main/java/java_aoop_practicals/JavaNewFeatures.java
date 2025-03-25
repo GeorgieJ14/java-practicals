@@ -8,7 +8,7 @@ public class JavaNewFeatures {
 
     public enum Day {SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY,
         SATURDAY};
-    
+
     public static void demonstrateGenericsForEach() {
         ArrayList<String> words = new ArrayList<String>();
         words.add("Hello, ");
@@ -19,7 +19,7 @@ public class JavaNewFeatures {
         System.out.println("The words stuck together make: " +
             stuckTogetherWords);
     }
-    
+
     public static void demonstrateEnums() {
         Day day = Day.FRIDAY;
         System.out.print("Today is " + day);
@@ -40,7 +40,7 @@ public class JavaNewFeatures {
         System.out.println("The sum of the ints is "+
             (ints[0]+ints[1]+ints[2]));
     }
-    
+
     public static void demonstrateAssertsStaticImports() {
         assert (sqrt(PI) > 4) : "Crash!!";
     }

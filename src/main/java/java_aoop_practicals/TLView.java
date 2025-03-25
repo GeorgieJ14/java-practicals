@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class TLView  implements Observer {
+public class TLView implements Observer {
 
     private static final Dimension PANEL_SIZE = new Dimension(200,200);
 
@@ -31,16 +31,15 @@ public class TLView  implements Observer {
     private final JButton changeButton = new JButton("Change");
     private final JButton initialiseButton = new JButton("Initialise");
 
-     
-    public TLView(TLModel model, TLController controller)  {        
-        this.model = model; 
+    public TLView(TLModel model, TLController controller) {
+        this.model = model;
         model.addObserver(this);
         this.controller = controller;
         createControls();
         controller.setView(this);
         update(model, null);
-    } 
-    
+    }
+
     public void createControls()
     {
         frame = new JFrame("MVC Traffic Light Example");
@@ -50,14 +49,14 @@ public class TLView  implements Observer {
         contentPane.setLayout(new BoxLayout(contentPane, BoxLayout.X_AXIS));
         createPanel();
         contentPane.add(panel);
-        
+
         frame.pack();
         frame.setResizable(false);
         frame.setVisible(true);
     }
-    
+
     @Override
-     public void update(java.util.Observable o, Object arg) {
+    public void update(java.util.Observable o, Object arg) {
         redField.setText(model.getRed()?"ON":"OFF");
         amberField.setText(model.getAmber()?"ON":"OFF");
         greenField.setText(model.getGreen()?"ON":"OFF");
@@ -70,23 +69,20 @@ public class TLView  implements Observer {
         redField.setEditable(false);
         amberField.setEditable(false);
         greenField.setEditable(false);
-        
+
         panel.add(redLabel);
         panel.add(redField);
         panel.add(amberLabel);
         panel.add(amberField);
         panel.add(greenLabel);
         panel.add(greenField);
-        
-        
 
-        
         changeButton.addActionListener((ActionEvent e) -> {controller.change();});
         panel.add(changeButton);
-       
+
         initialiseButton.addActionListener((ActionEvent e) -> {controller.initialise();});
         panel.add(initialiseButton);
-        
+
         panel.setPreferredSize(PANEL_SIZE);
     }
 }
