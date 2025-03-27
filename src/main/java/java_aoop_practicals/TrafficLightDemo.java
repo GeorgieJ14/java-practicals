@@ -11,9 +11,9 @@ public class TrafficLightDemo {
 
     public static void createAndShowGUI() {
 
-        TLModel model = new TLModel();
-        TLController controller = new TLController(model);
-        TLView view = new TLView(model, controller);
-        TLGraphicalView gview = new TLGraphicalView(model);
+        // TLModel model = new TLModel();
+        TLController controller = new TLController();
+        TLView view = new TLView(controller.getModel(), controller);
+        TLGraphicalView gview = new TLGraphicalView(controller.getModel());
     }
 }
